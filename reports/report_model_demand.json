@@ -1,0 +1,188 @@
+{
+  "columns": [
+    {
+      "key": "lj_make_group",
+      "label": "Make (grouped)",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_model_group",
+      "label": "Model (grouped)",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_worked_leads",
+      "label": "Leads worked",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_worked_sold",
+      "label": "Sold (worked)",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "kind": "measure",
+      "format": "percent"
+    }
+  ],
+  "rows": [
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Sealion 7",
+      "lj_worked_leads": 82,
+      "lj_worked_sold": 7,
+      "lj_worked_close_rate": 0.0854
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Shark 6",
+      "lj_worked_leads": 72,
+      "lj_worked_sold": 11,
+      "lj_worked_close_rate": 0.1528
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Atto 1",
+      "lj_worked_leads": 66,
+      "lj_worked_sold": 17,
+      "lj_worked_close_rate": 0.2576
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Sealion 8",
+      "lj_worked_leads": 54,
+      "lj_worked_sold": 8,
+      "lj_worked_close_rate": 0.1481
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Atto 2",
+      "lj_worked_leads": 53,
+      "lj_worked_sold": 8,
+      "lj_worked_close_rate": 0.1509
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Atto 3",
+      "lj_worked_leads": 34,
+      "lj_worked_sold": 2,
+      "lj_worked_close_rate": 0.0588
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Dolphin",
+      "lj_worked_leads": 25,
+      "lj_worked_sold": 6,
+      "lj_worked_close_rate": 0.24
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Sealion 6",
+      "lj_worked_leads": 23,
+      "lj_worked_sold": 3,
+      "lj_worked_close_rate": 0.1304
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Seal",
+      "lj_worked_leads": 18,
+      "lj_worked_sold": 2,
+      "lj_worked_close_rate": 0.1111
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Sealion 5",
+      "lj_worked_leads": 12,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Seal 6",
+      "lj_worked_leads": 8,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": null,
+      "lj_worked_leads": 7,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": null,
+      "lj_model_group": null,
+      "lj_worked_leads": 2,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "2026",
+      "lj_worked_leads": 1,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "BYD M9",
+      "lj_worked_leads": 1,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "M9",
+      "lj_worked_leads": 1,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "BYD",
+      "lj_model_group": "Sealion",
+      "lj_worked_leads": 1,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_make_group": "Carnival",
+      "lj_model_group": null,
+      "lj_worked_leads": 1,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    }
+  ],
+  "totals": {
+    "lj_worked_leads": 461,
+    "lj_worked_sold": 64,
+    "lj_worked_close_rate": 0.1388
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "lj_make_group",
+      "lj_model_group"
+    ],
+    "measures": [
+      "lj_worked_leads",
+      "lj_worked_sold",
+      "lj_worked_close_rate"
+    ],
+    "group_count": 18,
+    "source_rows": 461,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

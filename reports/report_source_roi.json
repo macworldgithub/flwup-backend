@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "key": "lj_lead_type",
+      "label": "Lead source",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_worked_leads",
+      "label": "Leads worked",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_reply_rate",
+      "label": "Reply rate",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "lj_worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "lj_median_days_to_sold",
+      "label": "Median days to sale",
+      "kind": "measure",
+      "format": "days"
+    }
+  ],
+  "rows": [
+    {
+      "lj_lead_type": "walk_in",
+      "lj_worked_leads": 251,
+      "lj_reply_rate": 0.2948,
+      "lj_worked_close_rate": 0.1474,
+      "lj_median_days_to_sold": 1
+    },
+    {
+      "lj_lead_type": null,
+      "lj_worked_leads": 79,
+      "lj_reply_rate": 0.2785,
+      "lj_worked_close_rate": 0.1013,
+      "lj_median_days_to_sold": 2.1
+    },
+    {
+      "lj_lead_type": "internet",
+      "lj_worked_leads": 51,
+      "lj_reply_rate": 0.2157,
+      "lj_worked_close_rate": 0.0784,
+      "lj_median_days_to_sold": 1.8
+    },
+    {
+      "lj_lead_type": "phone",
+      "lj_worked_leads": 49,
+      "lj_reply_rate": 0.2449,
+      "lj_worked_close_rate": 0.2245,
+      "lj_median_days_to_sold": 0.9
+    },
+    {
+      "lj_lead_type": "carsales",
+      "lj_worked_leads": 27,
+      "lj_reply_rate": 0.4815,
+      "lj_worked_close_rate": 0.037,
+      "lj_median_days_to_sold": 1.1
+    },
+    {
+      "lj_lead_type": "referral",
+      "lj_worked_leads": 4,
+      "lj_reply_rate": 0,
+      "lj_worked_close_rate": 0.75,
+      "lj_median_days_to_sold": 0
+    }
+  ],
+  "totals": {
+    "lj_worked_leads": 461,
+    "lj_reply_rate": 0.2863,
+    "lj_worked_close_rate": 0.1388,
+    "lj_median_days_to_sold": 1
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "lj_lead_type"
+    ],
+    "measures": [
+      "lj_worked_leads",
+      "lj_reply_rate",
+      "lj_worked_close_rate",
+      "lj_median_days_to_sold"
+    ],
+    "group_count": 6,
+    "source_rows": 461,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

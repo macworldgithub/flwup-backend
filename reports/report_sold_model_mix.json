@@ -1,0 +1,101 @@
+{
+  "columns": [
+    {
+      "key": "lj_sold_model_group",
+      "label": "Model sold (grouped)",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_model_switched",
+      "label": "Changed car?",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_worked_sold",
+      "label": "Sold (worked)",
+      "kind": "measure",
+      "format": "integer"
+    }
+  ],
+  "rows": [
+    {
+      "lj_sold_model_group": "Atto 1",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 17
+    },
+    {
+      "lj_sold_model_group": "Shark 6",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 11
+    },
+    {
+      "lj_sold_model_group": "Sealion 8",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 8
+    },
+    {
+      "lj_sold_model_group": "Atto 2",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 7
+    },
+    {
+      "lj_sold_model_group": "Sealion 7",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 7
+    },
+    {
+      "lj_sold_model_group": "Dolphin",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 5
+    },
+    {
+      "lj_sold_model_group": "Sealion 6",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 3
+    },
+    {
+      "lj_sold_model_group": "Atto 3",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 2
+    },
+    {
+      "lj_sold_model_group": "Seal",
+      "lj_model_switched": "Same car",
+      "lj_worked_sold": 2
+    },
+    {
+      "lj_sold_model_group": "Atto 2",
+      "lj_model_switched": "Different car",
+      "lj_worked_sold": 1
+    },
+    {
+      "lj_sold_model_group": "Atto 2",
+      "lj_model_switched": "Not recorded",
+      "lj_worked_sold": 1
+    }
+  ],
+  "totals": {
+    "lj_worked_sold": 64
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "lj_sold_model_group",
+      "lj_model_switched"
+    ],
+    "measures": [
+      "lj_worked_sold"
+    ],
+    "group_count": 11,
+    "source_rows": 64,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

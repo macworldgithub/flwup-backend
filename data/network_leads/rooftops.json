@@ -1,0 +1,33 @@
+{
+  "role": "group_marketing",
+  "rooftops": [
+    {
+      "id": "4fbf1047-efa1-4330-9936-b268132e14dc",
+      "name": "BYD South Morang",
+      "active": true,
+      "tier": "pro",
+      "has_post_sale_template": true
+    },
+    {
+      "id": "5913033a-1474-448f-b15c-53668ffe3d5e",
+      "name": "Chery South Morang",
+      "active": true,
+      "tier": "pro",
+      "has_post_sale_template": true
+    },
+    {
+      "id": "94d1383a-8ceb-4e36-8950-ccac5ef2e69f",
+      "name": "South Morang Hyundai",
+      "active": true,
+      "tier": "pro",
+      "has_post_sale_template": true
+    },
+    {
+      "id": "4b26f732-f51d-4665-9269-214024aac866",
+      "name": "South Morang Kia",
+      "active": true,
+      "tier": "pro",
+      "has_post_sale_template": false
+    }
+  ]
+}

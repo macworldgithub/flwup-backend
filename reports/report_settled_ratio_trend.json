@@ -1,0 +1,67 @@
+{
+  "columns": [
+    {
+      "key": "month",
+      "label": "Month",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "worked_leads",
+      "label": "Leads worked",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "worked_sold",
+      "label": "Sold (worked)",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "kind": "measure",
+      "format": "percent"
+    }
+  ],
+  "rows": [
+    {
+      "month": "2026-09-01",
+      "worked_leads": 319,
+      "worked_sold": 46,
+      "worked_close_rate": 0.1442
+    },
+    {
+      "month": "2026-10-01",
+      "worked_leads": 131,
+      "worked_sold": 16,
+      "worked_close_rate": 0.1221
+    }
+  ],
+  "totals": {
+    "worked_leads": 450,
+    "worked_sold": 62,
+    "worked_close_rate": 0.1378
+  },
+  "meta": {
+    "source": "daily_stats",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "month"
+    ],
+    "measures": [
+      "worked_leads",
+      "worked_sold",
+      "worked_close_rate"
+    ],
+    "group_count": 2,
+    "source_rows": 28,
+    "truncated": false,
+    "data_as_of": "2026-10-07T15:10:14.419935+00:00",
+    "scope_dealership_count": 1
+  }
+}

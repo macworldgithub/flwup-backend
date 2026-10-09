@@ -1,0 +1,21 @@
+{
+  "name": "boran-motors-crm-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Boran Motors CRM — Backend data fetcher and compiler. Pulls live data from FLWUP API and compiles it for the frontend CRM.",
+  "scripts": {
+    "fetch": "node index.js",
+    "fetch:leads": "node index.js --only leads",
+    "fetch:dashboard": "node index.js --only dashboard",
+    "fetch:reports": "node index.js --only reports",
+    "fetch:combined": "node index.js --combined",
+    "build-data": "node scripts/build-data.js",
+    "fetch-and-build": "node index.js --only leads,dashboard,reports && node scripts/build-data.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["crm", "boran-motors", "flwup", "automotive"],
+  "author": "Boran Motors Group",
+  "license": "UNLICENSED"
+}

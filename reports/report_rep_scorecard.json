@@ -1,0 +1,160 @@
+{
+  "columns": [
+    {
+      "key": "lj_owner",
+      "label": "Rep",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_worked_leads",
+      "label": "Leads worked",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_median_minutes_to_touch",
+      "label": "Median time to touch",
+      "kind": "measure",
+      "format": "minutes"
+    },
+    {
+      "key": "lj_touched_15m_rate",
+      "label": "15-minute response rate",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "lj_touch_rate",
+      "label": "Touch rate",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "lj_median_attempts",
+      "label": "Median attempts per lead",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "kind": "measure",
+      "format": "percent"
+    }
+  ],
+  "rows": [
+    {
+      "lj_owner": "Kyle Robinson",
+      "lj_worked_leads": 112,
+      "lj_median_minutes_to_touch": 2978,
+      "lj_touched_15m_rate": 0.0089,
+      "lj_touch_rate": 0.3214,
+      "lj_median_attempts": 4,
+      "lj_worked_close_rate": 0.0625
+    },
+    {
+      "lj_owner": "Kayla Hall",
+      "lj_worked_leads": 64,
+      "lj_median_minutes_to_touch": 2862,
+      "lj_touched_15m_rate": 0,
+      "lj_touch_rate": 0.3594,
+      "lj_median_attempts": 3,
+      "lj_worked_close_rate": 0.125
+    },
+    {
+      "lj_owner": "Saad Malik",
+      "lj_worked_leads": 59,
+      "lj_median_minutes_to_touch": 1,
+      "lj_touched_15m_rate": 0.8475,
+      "lj_touch_rate": 0.9153,
+      "lj_median_attempts": 2,
+      "lj_worked_close_rate": 0.1017
+    },
+    {
+      "lj_owner": "Adrian Zuccala",
+      "lj_worked_leads": 58,
+      "lj_median_minutes_to_touch": 2,
+      "lj_touched_15m_rate": 0.5,
+      "lj_touch_rate": 0.6034,
+      "lj_median_attempts": 2,
+      "lj_worked_close_rate": 0.1379
+    },
+    {
+      "lj_owner": "Ryan Curukovski",
+      "lj_worked_leads": 47,
+      "lj_median_minutes_to_touch": 174,
+      "lj_touched_15m_rate": 0.1064,
+      "lj_touch_rate": 0.4468,
+      "lj_median_attempts": 2,
+      "lj_worked_close_rate": 0.3191
+    },
+    {
+      "lj_owner": "Jorgia Webb ",
+      "lj_worked_leads": 46,
+      "lj_median_minutes_to_touch": 2400.5,
+      "lj_touched_15m_rate": 0.087,
+      "lj_touch_rate": 0.3913,
+      "lj_median_attempts": 5,
+      "lj_worked_close_rate": 0.1739
+    },
+    {
+      "lj_owner": "Lewis Dannock",
+      "lj_worked_leads": 44,
+      "lj_median_minutes_to_touch": 3899,
+      "lj_touched_15m_rate": 0,
+      "lj_touch_rate": 0.3864,
+      "lj_median_attempts": 1,
+      "lj_worked_close_rate": 0.2045
+    },
+    {
+      "lj_owner": "Elise Reuter",
+      "lj_worked_leads": 29,
+      "lj_median_minutes_to_touch": 552,
+      "lj_touched_15m_rate": 0.1034,
+      "lj_touch_rate": 0.2759,
+      "lj_median_attempts": 1,
+      "lj_worked_close_rate": 0.1034
+    },
+    {
+      "lj_owner": "Mark Robinson",
+      "lj_worked_leads": 2,
+      "lj_median_minutes_to_touch": 1,
+      "lj_touched_15m_rate": 0.5,
+      "lj_touch_rate": 0.5,
+      "lj_median_attempts": 2,
+      "lj_worked_close_rate": 0
+    }
+  ],
+  "totals": {
+    "lj_worked_leads": 461,
+    "lj_median_minutes_to_touch": 163,
+    "lj_touched_15m_rate": 0.2017,
+    "lj_touch_rate": 0.462,
+    "lj_median_attempts": 3,
+    "lj_worked_close_rate": 0.1388
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "lj_owner"
+    ],
+    "measures": [
+      "lj_worked_leads",
+      "lj_median_minutes_to_touch",
+      "lj_touched_15m_rate",
+      "lj_touch_rate",
+      "lj_median_attempts",
+      "lj_worked_close_rate"
+    ],
+    "group_count": 9,
+    "source_rows": 461,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

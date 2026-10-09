@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "key": "dealership",
+      "label": "Rooftop",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "leads_created",
+      "label": "Leads",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "touched_5m_rate",
+      "label": "5-minute response rate",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "touched_15m_rate",
+      "label": "15-minute response rate",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "median_minutes_to_touch",
+      "label": "Median time to touch",
+      "kind": "measure",
+      "format": "minutes"
+    }
+  ],
+  "rows": [
+    {
+      "dealership": "BYD South Morang",
+      "leads_created": 535,
+      "touched_5m_rate": 0.1682,
+      "touched_15m_rate": 0.1701,
+      "median_minutes_to_touch": 1226
+    }
+  ],
+  "totals": {
+    "leads_created": 535,
+    "touched_5m_rate": 0.1682,
+    "touched_15m_rate": 0.1701,
+    "median_minutes_to_touch": 1226
+  },
+  "meta": {
+    "source": "daily_stats",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "dealership"
+    ],
+    "measures": [
+      "leads_created",
+      "touched_5m_rate",
+      "touched_15m_rate",
+      "median_minutes_to_touch"
+    ],
+    "group_count": 1,
+    "source_rows": 28,
+    "truncated": false,
+    "data_as_of": "2026-10-07T15:10:14.419935+00:00",
+    "scope_dealership_count": 1
+  }
+}

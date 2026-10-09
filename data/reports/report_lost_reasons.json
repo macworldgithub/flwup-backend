@@ -1,0 +1,259 @@
+{
+  "columns": [
+    {
+      "key": "lj_lost_reason",
+      "label": "Lost reason",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_leads",
+      "label": "Leads",
+      "kind": "measure",
+      "format": "integer"
+    }
+  ],
+  "rows": [
+    {
+      "lj_lost_reason": "opted out of msg",
+      "lj_leads": 5
+    },
+    {
+      "lj_lost_reason": "no longer interested",
+      "lj_leads": 4
+    },
+    {
+      "lj_lost_reason": null,
+      "lj_leads": 3
+    },
+    {
+      "lj_lost_reason": "NO ANSWER",
+      "lj_leads": 3
+    },
+    {
+      "lj_lost_reason": "opted for stop on msg",
+      "lj_leads": 3
+    },
+    {
+      "lj_lost_reason": "",
+      "lj_leads": 2
+    },
+    {
+      "lj_lost_reason": "OPTED OUT",
+      "lj_leads": 2
+    },
+    {
+      "lj_lost_reason": "Customer unsubscribed",
+      "lj_leads": 2
+    },
+    {
+      "lj_lost_reason": "Had to buy a different car",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Vehicle is out of their budget",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Lewis’ customer",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "brought from another dealer as it was more convient (fairfeild)",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "customer is no longer interested",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "No longer interested in hybrid",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "not interested anym,ore",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "customer wasnt happy with price",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "bought closer to ACT",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Jorgias customer",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "duplicate",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Too far and not coming in",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "bnrpought from another dcfealer",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "no answer",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Bought a Geely",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "cancelled",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "customer cancelled",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "invalid phone number",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "dENIS CUSTOMERS",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NOT KEEN",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "customer is parked the idea on a new car for the time being",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Bought an MG",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NO LONGER PROCEEDING WITH PURSCAHSE",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "no reponse",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Gave wrong number",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "No longer interested",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "got free stuff from Fairfield",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "ordered through ORIX",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NO ANSWQER",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Caroline Springs Free Accessories",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "this customer cannot afford a BYD just yet",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NO ASNWER",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "not happy with trade in price",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "not ready to buy",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Change of mind",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NOT INTERESTED",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "To far off on trade in",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "bought elsewhere",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "change of mind",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NOT ANSWEWR",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "sold car to her partner",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Bought Kia",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "NEW",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "still waiting",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Preferred the mg instead",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "no contact from customer",
+      "lj_leads": 1
+    },
+    {
+      "lj_lost_reason": "Unsubscribed",
+      "lj_leads": 1
+    }
+  ],
+  "totals": {
+    "lj_leads": 71
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-08",
+      "to": "2026-10-07"
+    },
+    "dimensions": [
+      "lj_lost_reason"
+    ],
+    "measures": [
+      "lj_leads"
+    ],
+    "group_count": 55,
+    "source_rows": 71,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "key": "dealership",
+      "label": "Rooftop",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "leads_created",
+      "label": "Leads",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "untouched",
+      "label": "Never touched",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "untouched_rate",
+      "label": "Never-touched rate",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "touch_rate",
+      "label": "Touch rate",
+      "kind": "measure",
+      "format": "percent"
+    }
+  ],
+  "rows": [
+    {
+      "dealership": "BYD South Morang",
+      "leads_created": 520,
+      "untouched": 309,
+      "untouched_rate": 0.5942,
+      "touch_rate": 0.4058
+    }
+  ],
+  "totals": {
+    "leads_created": 520,
+    "untouched": 309,
+    "untouched_rate": 0.5942,
+    "touch_rate": 0.4058
+  },
+  "meta": {
+    "source": "daily_stats",
+    "period": {
+      "from": "2026-09-08",
+      "to": "2026-10-07"
+    },
+    "dimensions": [
+      "dealership"
+    ],
+    "measures": [
+      "leads_created",
+      "untouched",
+      "untouched_rate",
+      "touch_rate"
+    ],
+    "group_count": 1,
+    "source_rows": 28,
+    "truncated": false,
+    "data_as_of": "2026-10-06T15:10:16.285455+00:00",
+    "scope_dealership_count": 1
+  }
+}

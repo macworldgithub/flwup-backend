@@ -1,0 +1,97 @@
+{
+  "columns": [
+    {
+      "key": "lj_response_band",
+      "label": "Response time",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_worked_leads",
+      "label": "Leads worked",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_worked_sold",
+      "label": "Sold (worked)",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "kind": "measure",
+      "format": "percent"
+    }
+  ],
+  "rows": [
+    {
+      "lj_response_band": "1 · Under 5 min",
+      "lj_worked_leads": 90,
+      "lj_worked_sold": 8,
+      "lj_worked_close_rate": 0.0889
+    },
+    {
+      "lj_response_band": "2 · 5-15 min",
+      "lj_worked_leads": 3,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_response_band": "3 · 15-60 min",
+      "lj_worked_leads": 7,
+      "lj_worked_sold": 0,
+      "lj_worked_close_rate": 0
+    },
+    {
+      "lj_response_band": "4 · 1-4 hours",
+      "lj_worked_leads": 10,
+      "lj_worked_sold": 2,
+      "lj_worked_close_rate": 0.2
+    },
+    {
+      "lj_response_band": "5 · 4-24 hours",
+      "lj_worked_leads": 15,
+      "lj_worked_sold": 1,
+      "lj_worked_close_rate": 0.0667
+    },
+    {
+      "lj_response_band": "6 · Over 24 hours",
+      "lj_worked_leads": 88,
+      "lj_worked_sold": 12,
+      "lj_worked_close_rate": 0.1364
+    },
+    {
+      "lj_response_band": "7 · Never touched",
+      "lj_worked_leads": 248,
+      "lj_worked_sold": 41,
+      "lj_worked_close_rate": 0.1653
+    }
+  ],
+  "totals": {
+    "lj_worked_leads": 461,
+    "lj_worked_sold": 64,
+    "lj_worked_close_rate": 0.1388
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-09",
+      "to": "2026-10-08"
+    },
+    "dimensions": [
+      "lj_response_band"
+    ],
+    "measures": [
+      "lj_worked_leads",
+      "lj_worked_sold",
+      "lj_worked_close_rate"
+    ],
+    "group_count": 7,
+    "source_rows": 461,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

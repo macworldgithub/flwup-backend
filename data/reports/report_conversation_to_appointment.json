@@ -1,0 +1,126 @@
+{
+  "columns": [
+    {
+      "key": "lj_owner",
+      "label": "Rep",
+      "kind": "dimension",
+      "format": "text"
+    },
+    {
+      "key": "lj_replied",
+      "label": "Replied",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_appointments_set",
+      "label": "Appointments set",
+      "kind": "measure",
+      "format": "integer"
+    },
+    {
+      "key": "lj_reply_to_appointment",
+      "label": "Conversation → appointment",
+      "kind": "measure",
+      "format": "percent"
+    },
+    {
+      "key": "lj_appointment_show_rate",
+      "label": "Appointment show rate",
+      "kind": "measure",
+      "format": "percent"
+    }
+  ],
+  "rows": [
+    {
+      "lj_owner": "Kyle Robinson",
+      "lj_replied": 36,
+      "lj_appointments_set": 2,
+      "lj_reply_to_appointment": 0.0556,
+      "lj_appointment_show_rate": 0
+    },
+    {
+      "lj_owner": "Jorgia Webb ",
+      "lj_replied": 16,
+      "lj_appointments_set": 13,
+      "lj_reply_to_appointment": 0.8125,
+      "lj_appointment_show_rate": 0.6154
+    },
+    {
+      "lj_owner": "Kayla Hall",
+      "lj_replied": 16,
+      "lj_appointments_set": 0,
+      "lj_reply_to_appointment": 0,
+      "lj_appointment_show_rate": null
+    },
+    {
+      "lj_owner": "Saad Malik",
+      "lj_replied": 16,
+      "lj_appointments_set": 5,
+      "lj_reply_to_appointment": 0.3125,
+      "lj_appointment_show_rate": 0.2
+    },
+    {
+      "lj_owner": "Lewis Dannock",
+      "lj_replied": 12,
+      "lj_appointments_set": 0,
+      "lj_reply_to_appointment": 0,
+      "lj_appointment_show_rate": null
+    },
+    {
+      "lj_owner": "Adrian Zuccala",
+      "lj_replied": 12,
+      "lj_appointments_set": 0,
+      "lj_reply_to_appointment": 0,
+      "lj_appointment_show_rate": null
+    },
+    {
+      "lj_owner": "Ryan Curukovski",
+      "lj_replied": 10,
+      "lj_appointments_set": 0,
+      "lj_reply_to_appointment": 0,
+      "lj_appointment_show_rate": null
+    },
+    {
+      "lj_owner": "Elise Reuter",
+      "lj_replied": 6,
+      "lj_appointments_set": 0,
+      "lj_reply_to_appointment": 0,
+      "lj_appointment_show_rate": null
+    },
+    {
+      "lj_owner": "Mark Robinson",
+      "lj_replied": 0,
+      "lj_appointments_set": 0,
+      "lj_reply_to_appointment": null,
+      "lj_appointment_show_rate": null
+    }
+  ],
+  "totals": {
+    "lj_replied": 124,
+    "lj_appointments_set": 20,
+    "lj_reply_to_appointment": 0.1613,
+    "lj_appointment_show_rate": 0.45
+  },
+  "meta": {
+    "source": "lead_journey",
+    "period": {
+      "from": "2026-09-08",
+      "to": "2026-10-07"
+    },
+    "dimensions": [
+      "lj_owner"
+    ],
+    "measures": [
+      "lj_replied",
+      "lj_appointments_set",
+      "lj_reply_to_appointment",
+      "lj_appointment_show_rate"
+    ],
+    "group_count": 9,
+    "source_rows": 460,
+    "truncated": false,
+    "data_as_of": null,
+    "scope_dealership_count": 1
+  }
+}

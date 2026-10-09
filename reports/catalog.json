@@ -1,0 +1,2390 @@
+{
+  "role": "rooftop_manager",
+  "scope_dealership_count": 1,
+  "group_dealership_count": 1,
+  "sources": [
+    {
+      "id": "daily_stats",
+      "label": "Daily rollup (fast, rooftop + date only)"
+    },
+    {
+      "id": "lead_journey",
+      "label": "Lead level (slice by source, vehicle, rep, status)"
+    }
+  ],
+  "measures": [
+    {
+      "id": "leads_created",
+      "label": "Leads",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "leads_created",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads created in the period, counted on the day they arrived."
+    },
+    {
+      "id": "leads_from_feed",
+      "label": "Leads from feed",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "leads_from_feed",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads delivered by an OEM or partner API rather than entered by hand."
+    },
+    {
+      "id": "touched",
+      "label": "Touched",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "touched",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads a human rang, edited a follow-up for, or approved a reply to."
+    },
+    {
+      "id": "touched_60m",
+      "label": "Touched < 1h",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "touched_60m",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within an hour of arriving."
+    },
+    {
+      "id": "touched_24h",
+      "label": "Touched < 24h",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "touched_24h",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within a day of arriving."
+    },
+    {
+      "id": "untouched",
+      "label": "Never touched",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "untouched",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads no human ever actioned. The number an OEM asks for by name."
+    },
+    {
+      "id": "replied",
+      "label": "Replied",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "replied",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads where the customer wrote back at least once."
+    },
+    {
+      "id": "sold",
+      "label": "Sold",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "sold",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads from this cohort that ended in a sale, whenever it happened."
+    },
+    {
+      "id": "lost",
+      "label": "Lost",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "lost",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads from this cohort marked lost."
+    },
+    {
+      "id": "still_open",
+      "label": "Still open",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "still_open",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads from this cohort neither sold nor lost."
+    },
+    {
+      "id": "median_minutes_to_touch",
+      "label": "Median time to touch",
+      "source": "daily_stats",
+      "kind": "weightedMean",
+      "meanColumn": "median_minutes_to_touch",
+      "weightColumn": "touched",
+      "format": "minutes",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Typical minutes before a human touched the lead (weighted across days)."
+    },
+    {
+      "id": "touched_5m",
+      "label": "Touched < 5m",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "touched_5m",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within five minutes."
+    },
+    {
+      "id": "touched_15m",
+      "label": "Touched < 15m",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "touched_15m",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within fifteen minutes."
+    },
+    {
+      "id": "touched_30m",
+      "label": "Touched < 30m",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "touched_30m",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within half an hour."
+    },
+    {
+      "id": "worked_leads",
+      "label": "Leads worked",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "worked_leads",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads the dealership actually worked, excluding deals logged after they closed."
+    },
+    {
+      "id": "worked_contacted",
+      "label": "Contacted",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "worked_contacted",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Reachable leads that received at least one outbound contact of any kind."
+    },
+    {
+      "id": "reachable_leads",
+      "label": "Leads we could reach",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "reachable_leads",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Worked leads still open when the cadence opener came due. Excludes same-day closes, where sending nothing was correct."
+    },
+    {
+      "id": "contact_coverage",
+      "label": "Contact coverage",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "worked_contacted",
+      "denominator": "reachable_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of reachable leads that received anything at all. The target is 100% — FLWUP schedules a follow-up for every lead."
+    },
+    {
+      "id": "worked_sold",
+      "label": "Sold (worked)",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "worked_sold",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Sales that came from a lead this dealership worked."
+    },
+    {
+      "id": "appointments_set",
+      "label": "Appointments set",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "appointments_set",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Showroom appointments booked off these leads."
+    },
+    {
+      "id": "appointments_kept",
+      "label": "Appointments kept",
+      "source": "daily_stats",
+      "kind": "sum",
+      "column": "appointments_kept",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Appointments the customer turned up for. A future booking counts as neither kept nor missed."
+    },
+    {
+      "id": "touch_rate",
+      "label": "Touch rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "touched",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads a human ever actioned."
+    },
+    {
+      "id": "untouched_rate",
+      "label": "Never-touched rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "untouched",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads no human ever actioned. Industry-wide this runs at 32%."
+    },
+    {
+      "id": "touched_5m_rate",
+      "label": "5-minute response rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "touched_5m",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads touched within five minutes. The single biggest lever on close rate."
+    },
+    {
+      "id": "touched_15m_rate",
+      "label": "15-minute response rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "touched_15m",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads touched within fifteen minutes — the competitive benchmark."
+    },
+    {
+      "id": "touched_60m_rate",
+      "label": "1-hour response rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "touched_60m",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads touched within the hour. Kept for continuity — the 5 and 15 minute rates are the ones that discriminate."
+    },
+    {
+      "id": "worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "worked_sold",
+      "denominator": "worked_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Sales as a share of leads the dealership worked. The honest close rate — deals logged after they closed are excluded from both halves."
+    },
+    {
+      "id": "appointment_set_rate",
+      "label": "Appointment set rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "appointments_set",
+      "denominator": "worked_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Appointments booked per lead worked."
+    },
+    {
+      "id": "appointment_show_rate",
+      "label": "Appointment show rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "appointments_kept",
+      "denominator": "appointments_set",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of booked appointments the customer turned up for."
+    },
+    {
+      "id": "reply_rate",
+      "label": "Reply rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "replied",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads where the customer wrote back."
+    },
+    {
+      "id": "close_rate",
+      "label": "Close rate",
+      "source": "daily_stats",
+      "kind": "ratio",
+      "numerator": "sold",
+      "denominator": "leads_created",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads that ended in a sale."
+    },
+    {
+      "id": "lj_leads",
+      "label": "Leads",
+      "source": "lead_journey",
+      "kind": "count",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads created in the period."
+    },
+    {
+      "id": "lj_touched",
+      "label": "Touched",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads a human actioned."
+    },
+    {
+      "id": "lj_touched_60m",
+      "label": "Touched < 1h",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within an hour."
+    },
+    {
+      "id": "lj_touched_24h",
+      "label": "Touched < 24h",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within a day."
+    },
+    {
+      "id": "lj_untouched",
+      "label": "Never touched",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads no human ever actioned."
+    },
+    {
+      "id": "lj_replied",
+      "label": "Replied",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads where the customer wrote back."
+    },
+    {
+      "id": "lj_sold",
+      "label": "Sold",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads that ended in a sale."
+    },
+    {
+      "id": "lj_lost",
+      "label": "Lost",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads marked lost."
+    },
+    {
+      "id": "lj_follow_ups_sent",
+      "label": "Follow-ups sent",
+      "source": "lead_journey",
+      "kind": "sum",
+      "column": "follow_ups_sent",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Automated and rep-sent follow-ups delivered across these leads."
+    },
+    {
+      "id": "lj_replies_received",
+      "label": "Replies received",
+      "source": "lead_journey",
+      "kind": "sum",
+      "column": "replies_received",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Total inbound customer messages, not distinct leads."
+    },
+    {
+      "id": "lj_median_minutes_to_touch",
+      "label": "Median time to touch",
+      "source": "lead_journey",
+      "kind": "median",
+      "medianColumn": "minutes_to_first_touch",
+      "format": "minutes",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "True median minutes to first human touch across the leads in scope."
+    },
+    {
+      "id": "lj_median_days_to_sold",
+      "label": "Median days to sale",
+      "source": "lead_journey",
+      "kind": "median",
+      "medianColumn": "days_to_sold",
+      "format": "days",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Median days from lead created to sold, across leads that sold."
+    },
+    {
+      "id": "lj_touch_rate",
+      "label": "Touch rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_touched",
+      "denominator": "lj_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads a human ever actioned."
+    },
+    {
+      "id": "lj_touched_60m_rate",
+      "label": "1-hour response rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_touched_60m",
+      "denominator": "lj_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads touched within the hour."
+    },
+    {
+      "id": "lj_reply_rate",
+      "label": "Reply rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_replied",
+      "denominator": "lj_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads where the customer wrote back."
+    },
+    {
+      "id": "lj_close_rate",
+      "label": "Close rate (all records)",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_sold",
+      "denominator": "lj_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Sales as a share of every record, including deals logged after they closed. Use the worked-lead close rate to judge performance."
+    },
+    {
+      "id": "lj_contacted",
+      "label": "Contacted",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads a message actually reached — automated, manual or a logged call. Hard bounces do not count."
+    },
+    {
+      "id": "lj_never_contacted",
+      "label": "Never contacted",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads that were still open when their first follow-up came due, and nothing ever reached them. Should be zero."
+    },
+    {
+      "id": "lj_reachable_leads",
+      "label": "Leads we could reach",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads still open when the cadence opener came due. Excludes same-day walk-in closes, where sending nothing was correct."
+    },
+    {
+      "id": "lj_contact_coverage",
+      "label": "Contact coverage",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_contacted",
+      "denominator": "lj_reachable_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of reachable leads that received anything at all. The target is 100%, not an industry average."
+    },
+    {
+      "id": "lj_touched_5m",
+      "label": "Touched < 5m",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within five minutes."
+    },
+    {
+      "id": "lj_touched_15m",
+      "label": "Touched < 15m",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads touched by a human within fifteen minutes."
+    },
+    {
+      "id": "lj_worked_leads",
+      "label": "Leads worked",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Leads the dealership actually worked, excluding deals logged after they closed."
+    },
+    {
+      "id": "lj_worked_sold",
+      "label": "Sold (worked)",
+      "source": "lead_journey",
+      "kind": "countIf",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Sales that came from a lead this dealership worked."
+    },
+    {
+      "id": "lj_calls_logged",
+      "label": "Calls logged",
+      "source": "lead_journey",
+      "kind": "sum",
+      "column": "calls_logged",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Phone calls reps recorded against these leads."
+    },
+    {
+      "id": "lj_contact_attempts",
+      "label": "Contact attempts",
+      "source": "lead_journey",
+      "kind": "sum",
+      "column": "contact_attempts",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Every deliberate outbound touch — follow-ups plus logged calls."
+    },
+    {
+      "id": "lj_median_attempts",
+      "label": "Median attempts per lead",
+      "source": "lead_journey",
+      "kind": "median",
+      "medianColumn": "contact_attempts",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Typical number of outbound touches per lead. Conversion usually needs 6-8."
+    },
+    {
+      "id": "lj_appointments_set",
+      "label": "Appointments set",
+      "source": "lead_journey",
+      "kind": "sum",
+      "column": "appointments_set",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Showroom appointments booked off these leads."
+    },
+    {
+      "id": "lj_appointments_kept",
+      "label": "Appointments kept",
+      "source": "lead_journey",
+      "kind": "sum",
+      "column": "appointments_kept",
+      "format": "integer",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Appointments the customer turned up for."
+    },
+    {
+      "id": "lj_touched_5m_rate",
+      "label": "5-minute response rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_touched_5m",
+      "denominator": "lj_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads touched within five minutes."
+    },
+    {
+      "id": "lj_touched_15m_rate",
+      "label": "15-minute response rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_touched_15m",
+      "denominator": "lj_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of leads touched within fifteen minutes — the competitive benchmark."
+    },
+    {
+      "id": "lj_worked_close_rate",
+      "label": "Close rate (worked leads)",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_worked_sold",
+      "denominator": "lj_worked_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Sales as a share of leads the dealership worked. The honest close rate."
+    },
+    {
+      "id": "lj_appointment_set_rate",
+      "label": "Appointment set rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_appointments_set",
+      "denominator": "lj_worked_leads",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Appointments booked per lead worked."
+    },
+    {
+      "id": "lj_appointment_show_rate",
+      "label": "Appointment show rate",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_appointments_kept",
+      "denominator": "lj_appointments_set",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Share of booked appointments the customer turned up for."
+    },
+    {
+      "id": "lj_reply_to_appointment",
+      "label": "Conversation → appointment",
+      "source": "lead_journey",
+      "kind": "ratio",
+      "numerator": "lj_appointments_set",
+      "denominator": "lj_replied",
+      "format": "percent",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Appointments booked per lead that wrote back. Pure conversation-handling."
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "dealership",
+      "label": "Rooftop",
+      "source": "daily_stats",
+      "column": "dealership_id",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "One row per dealership."
+    },
+    {
+      "id": "day",
+      "label": "Day",
+      "source": "daily_stats",
+      "column": "day",
+      "bucket": "day",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Lead-cohort day."
+    },
+    {
+      "id": "week",
+      "label": "Week",
+      "source": "daily_stats",
+      "column": "day",
+      "bucket": "week",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Lead-cohort week, starting Monday."
+    },
+    {
+      "id": "month",
+      "label": "Month",
+      "source": "daily_stats",
+      "column": "day",
+      "bucket": "month",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Lead-cohort month."
+    },
+    {
+      "id": "lj_dealership",
+      "label": "Rooftop",
+      "source": "lead_journey",
+      "column": "dealership_name",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "One row per dealership."
+    },
+    {
+      "id": "lj_lead_type",
+      "label": "Lead source",
+      "source": "lead_journey",
+      "column": "lead_type",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "How the customer reached us: walk-in, phone, Carsales, internet, referral. The \"How did they reach us?\" field on the lead. Carsales became its own value in August 2026 (132) — before that it was counted inside internet, so do not read a step change across that date as a change in behaviour."
+    },
+    {
+      "id": "lj_source",
+      "label": "Entry channel",
+      "source": "lead_journey",
+      "column": "source",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "How the RECORD reached FLWUP: oem_api, website, csv_import, manual. Plumbing provenance, not the commercial question — for that use Lead source."
+    },
+    {
+      "id": "lj_entry_type",
+      "label": "How it was logged",
+      "source": "lead_journey",
+      "column": "entry_type",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Whether the rep logged this as a live lead or as a record of a deal that had already closed."
+    },
+    {
+      "id": "lj_channel",
+      "label": "Channel",
+      "source": "lead_journey",
+      "column": "preferred_channel",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Which channel this lead is worked on: email, sms or both."
+    },
+    {
+      "id": "lj_response_band",
+      "label": "Response time",
+      "source": "lead_journey",
+      "column": "minutes_to_first_touch",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "How fast a human first touched the lead, banded. Put close rate next to it to see the cliff."
+    },
+    {
+      "id": "lj_attempt_band",
+      "label": "Contact attempts",
+      "source": "lead_journey",
+      "column": "contact_attempts",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "How many outbound touches the lead got, banded. Conversion usually needs 6-8."
+    },
+    {
+      "id": "lj_arrival_hour",
+      "label": "Hour lead arrived",
+      "source": "lead_journey",
+      "column": "created_at",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Local hour the lead came in. Break never-touched leads down by this and it becomes a roster, not a telling-off."
+    },
+    {
+      "id": "lj_arrival_weekday",
+      "label": "Day lead arrived",
+      "source": "lead_journey",
+      "column": "created_at",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Local weekday the lead came in."
+    },
+    {
+      "id": "lj_source_campaign",
+      "label": "Campaign",
+      "source": "lead_journey",
+      "column": "source_campaign",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Originating campaign, where the feed supplied one."
+    },
+    {
+      "id": "lj_make_group",
+      "label": "Make (grouped)",
+      "source": "lead_journey",
+      "column": "vehicle_make",
+      "inputs": [
+        "vehicle_model"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Vehicle make, spelling-normalised and inferred from the model where the make is blank."
+    },
+    {
+      "id": "lj_model_group",
+      "label": "Model (grouped)",
+      "source": "lead_journey",
+      "column": "vehicle_model",
+      "inputs": [
+        "vehicle_make"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Vehicle model with case, trim and abbreviations folded together. A lead naming two models counts under the first."
+    },
+    {
+      "id": "lj_sold_model_group",
+      "label": "Model sold (grouped)",
+      "source": "lead_journey",
+      "column": "sold_vehicle_model",
+      "inputs": [
+        "sold_vehicle_make",
+        "vehicle_make",
+        "vehicle_model",
+        "status"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "The model actually sold, falling back to the enquiry model where the rep was never asked. Blank on leads that have not sold."
+    },
+    {
+      "id": "lj_model_switched",
+      "label": "Changed car?",
+      "source": "lead_journey",
+      "column": "sold_vehicle_model",
+      "inputs": [
+        "sold_vehicle_make",
+        "vehicle_make",
+        "vehicle_model",
+        "status"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Whether the car sold differs from the car enquired about. \"Not recorded\" is a sale made before the rep was asked."
+    },
+    {
+      "id": "lj_make",
+      "label": "Make (as entered)",
+      "source": "lead_journey",
+      "column": "vehicle_make",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Vehicle make exactly as it was typed or fed in."
+    },
+    {
+      "id": "lj_model",
+      "label": "Model (as entered)",
+      "source": "lead_journey",
+      "column": "vehicle_model",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Vehicle model exactly as it was typed or fed in — use this to audit data quality, not to count demand."
+    },
+    {
+      "id": "lj_year",
+      "label": "Vehicle year",
+      "source": "lead_journey",
+      "column": "vehicle_year",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Vehicle year on the lead."
+    },
+    {
+      "id": "lj_status",
+      "label": "Status",
+      "source": "lead_journey",
+      "column": "status",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Where the lead ended up."
+    },
+    {
+      "id": "lj_lost_reason",
+      "label": "Lost reason",
+      "source": "lead_journey",
+      "column": "lost_reason",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Why a lost lead was lost, where a rep recorded it."
+    },
+    {
+      "id": "lj_owner",
+      "label": "Rep",
+      "source": "lead_journey",
+      "column": "owner_name",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "The rep who owns the lead."
+    },
+    {
+      "id": "lj_day",
+      "label": "Day",
+      "source": "lead_journey",
+      "column": "created_at",
+      "bucket": "day",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Day the lead arrived."
+    },
+    {
+      "id": "lj_week",
+      "label": "Week",
+      "source": "lead_journey",
+      "column": "created_at",
+      "bucket": "week",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Week the lead arrived, starting Monday."
+    },
+    {
+      "id": "lj_month",
+      "label": "Month",
+      "source": "lead_journey",
+      "column": "created_at",
+      "bucket": "month",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Month the lead arrived."
+    }
+  ],
+  "filters": [
+    {
+      "id": "dealership_id",
+      "label": "Rooftop",
+      "source": "daily_stats",
+      "column": "dealership_id",
+      "kind": "uuid",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Narrow to one rooftop. Can only narrow within your scope, never widen it."
+    },
+    {
+      "id": "lj_dealership_id",
+      "label": "Rooftop",
+      "source": "lead_journey",
+      "column": "dealership_id",
+      "kind": "uuid",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Narrow to one rooftop."
+    },
+    {
+      "id": "lj_status_in",
+      "label": "Status",
+      "source": "lead_journey",
+      "column": "status",
+      "kind": "enum",
+      "options": [
+        "new_lead",
+        "following_up",
+        "returned",
+        "sold",
+        "lost"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Restrict to particular lead statuses."
+    },
+    {
+      "id": "lj_source_in",
+      "label": "Entry channel",
+      "source": "lead_journey",
+      "column": "source",
+      "kind": "enum",
+      "options": [
+        "oem_api",
+        "partner_api",
+        "website",
+        "csv_import",
+        "manual",
+        "inbound_email"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Restrict to how the record reached FLWUP."
+    },
+    {
+      "id": "lj_lead_type_in",
+      "label": "Lead source",
+      "source": "lead_journey",
+      "column": "lead_type",
+      "kind": "enum",
+      "options": [
+        "walk_in",
+        "phone",
+        "carsales",
+        "internet",
+        "referral"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Restrict to how the customer reached us."
+    },
+    {
+      "id": "lj_channel_in",
+      "label": "Channel",
+      "source": "lead_journey",
+      "column": "preferred_channel",
+      "kind": "enum",
+      "options": [
+        "email",
+        "sms",
+        "both"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Restrict to leads worked on a particular channel."
+    },
+    {
+      "id": "lj_worked_only",
+      "label": "Worked leads only",
+      "source": "lead_journey",
+      "column": "is_worked_lead",
+      "kind": "isTrue",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Exclude deals that were logged after they had already closed. On for any report about conversion."
+    },
+    {
+      "id": "lj_make_in",
+      "label": "Make",
+      "source": "lead_journey",
+      "column": "vehicle_make",
+      "kind": "derived",
+      "inputs": [
+        "vehicle_model"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Restrict to particular makes, matched on the grouped name (BYD, Byd and byd are one make)."
+    },
+    {
+      "id": "lj_model_in",
+      "label": "Model",
+      "source": "lead_journey",
+      "column": "vehicle_model",
+      "kind": "derived",
+      "inputs": [
+        "vehicle_make"
+      ],
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Restrict to particular models, matched on the grouped name (Sealion 7 Premium counts as Sealion 7)."
+    },
+    {
+      "id": "lj_untouched",
+      "label": "Never touched",
+      "source": "lead_journey",
+      "column": "first_touch_at",
+      "kind": "isNull",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Only leads no human ever actioned."
+    },
+    {
+      "id": "lj_replied_only",
+      "label": "Replied",
+      "source": "lead_journey",
+      "column": "first_reply_at",
+      "kind": "notNull",
+      "roles": [
+        "rooftop_manager",
+        "group_owner",
+        "dealer_principal",
+        "group_viewer",
+        "group_marketing",
+        "super_admin"
+      ],
+      "description": "Only leads where the customer wrote back."
+    }
+  ],
+  "sections": [
+    {
+      "id": "money",
+      "label": "Where the money goes"
+    },
+    {
+      "id": "training",
+      "label": "What training fixes"
+    },
+    {
+      "id": "coaching",
+      "label": "Who needs coaching"
+    },
+    {
+      "id": "demand",
+      "label": "What sells, and why we lose"
+    }
+  ],
+  "benchmarks": [
+    {
+      "measure": "lj_contact_coverage",
+      "kind": "product",
+      "direction": "higher",
+      "good": 0.98,
+      "warn": 0.9,
+      "label": "FLWUP schedules a follow-up for every lead — anything short of 100% is a delivery gap, not a coaching one",
+      "source": "FLWUP product promise, not an industry figure",
+      "action": "Check the skipped sends on these leads. The usual causes are a mobile with no email at a rooftop without SMS, or a channel that was never switched on."
+    },
+    {
+      "measure": "contact_coverage",
+      "kind": "product",
+      "direction": "higher",
+      "good": 0.98,
+      "warn": 0.9,
+      "label": "FLWUP schedules a follow-up for every lead — anything short of 100% is a delivery gap, not a coaching one",
+      "source": "FLWUP product promise, not an industry figure"
+    },
+    {
+      "measure": "touched_15m_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.5,
+      "warn": 0.25,
+      "label": "15 minutes is the competitive line — dealers under it close around 50% more",
+      "source": "Cox Automotive; 2026 dealership speed-to-lead studies",
+      "action": "Roster a named opener for each block of the day. Most misses are nobody-was-watching, not nobody-cared."
+    },
+    {
+      "measure": "touched_5m_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.3,
+      "warn": 0.1,
+      "label": "Contact inside 5 minutes converts at 25-32%; after an hour, 3-5%",
+      "source": "Cox Automotive lead-response study",
+      "action": "This is the single biggest lever on the page. Nothing else moves close rate this much."
+    },
+    {
+      "measure": "lj_touched_15m_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.5,
+      "warn": 0.25,
+      "label": "15 minutes is the competitive line — dealers under it close around 50% more",
+      "source": "Cox Automotive; 2026 dealership speed-to-lead studies"
+    },
+    {
+      "measure": "lj_touched_5m_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.3,
+      "warn": 0.1,
+      "label": "Contact inside 5 minutes converts at 25-32%; after an hour, 3-5%",
+      "source": "Cox Automotive lead-response study"
+    },
+    {
+      "measure": "median_minutes_to_touch",
+      "kind": "industry",
+      "direction": "lower",
+      "good": 15,
+      "warn": 60,
+      "label": "Median first response: 15 minutes is competitive, an hour is late",
+      "source": "Cox Automotive; Velocify (3.5M leads: 391% higher close inside 60 seconds)"
+    },
+    {
+      "measure": "lj_median_minutes_to_touch",
+      "kind": "industry",
+      "direction": "lower",
+      "good": 15,
+      "warn": 60,
+      "label": "Median first response: 15 minutes is competitive, an hour is late",
+      "source": "Cox Automotive; Velocify (3.5M leads: 391% higher close inside 60 seconds)"
+    },
+    {
+      "measure": "touch_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.9,
+      "warn": 0.68,
+      "label": "Across the industry 32% of leads never get a human response at all",
+      "source": "2026 automotive lead-response statistics",
+      "action": "Every point here is free. The lead is already bought and paid for."
+    },
+    {
+      "measure": "lj_touch_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.9,
+      "warn": 0.68,
+      "label": "Across the industry 32% of leads never get a human response at all",
+      "source": "2026 automotive lead-response statistics"
+    },
+    {
+      "measure": "worked_close_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.15,
+      "warn": 0.1,
+      "label": "Internet leads are commonly targeted at a 10-15% close",
+      "source": "Retail automotive internet-lead benchmarks, 2026",
+      "action": "Read this with the speed and persistence cards — they are the two inputs to it."
+    },
+    {
+      "measure": "lj_worked_close_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.15,
+      "warn": 0.1,
+      "label": "Internet leads are commonly targeted at a 10-15% close",
+      "source": "Retail automotive internet-lead benchmarks, 2026"
+    },
+    {
+      "measure": "lj_median_attempts",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 6,
+      "warn": 3,
+      "label": "Conversion typically needs 6-8 contacts; the average dealership makes 2",
+      "source": "2026 dealership follow-up study (top performers 8+ over 10-14 days)",
+      "action": "The cadence already does this if nobody switches it off. Check who is closing leads out early."
+    },
+    {
+      "measure": "appointment_set_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.28,
+      "warn": 0.18,
+      "label": "At a healthy 70% contact rate, about 28 appointments per 100 leads",
+      "source": "Dealership appointment-set-rate benchmarks, 2026"
+    },
+    {
+      "measure": "lj_appointment_set_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.28,
+      "warn": 0.18,
+      "label": "At a healthy 70% contact rate, about 28 appointments per 100 leads",
+      "source": "Dealership appointment-set-rate benchmarks, 2026"
+    },
+    {
+      "measure": "appointment_show_rate",
+      "kind": "industry",
+      "direction": "higher",
+      "good": 0.57,
+      "warn": 0.4,
+      "label": "Roughly 16 shows from 28 appointments per 100 leads",
+      "source": "Dealership appointment/show benchmarks, 2026",
+      "action": "A day-before reminder is the cheapest fix; FLWUP sends one on every booked appointment."
+    },
+    {
+      "measure": "untouched_rate",
+      "kind": "industry",
+      "direction": "lower",
+      "good": 0.1,
+      "warn": 0.32,
+      "label": "32% of automotive leads never receive a human response — that is the bar to beat",
+      "source": "2026 automotive lead-response statistics"
+    }
+  ],
+  "presets": [
+    {
+      "id": "lead_funnel",
+      "name": "The funnel",
+      "question": "Of the leads we worked, where do we lose them?",
+      "section": "money",
+      "headline": "lj_worked_close_rate",
+      "so_what": "Read the biggest drop-off first. Lead → contacted is a rostering problem, contacted → conversation is a messaging problem, conversation → appointment is a rep-skill problem, and appointment → sold is a desk problem.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [],
+        "measures": [
+          "lj_worked_leads",
+          "lj_contacted",
+          "lj_replied",
+          "lj_appointments_set",
+          "lj_worked_sold",
+          "lj_worked_close_rate"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "viz": "funnel"
+      }
+    },
+    {
+      "id": "contact_coverage",
+      "name": "Leads we never contacted",
+      "question": "Did every lead actually get something from us?",
+      "section": "money",
+      "headline": "lj_contact_coverage",
+      "so_what": "This one is on FLWUP, not on the team. A follow-up is scheduled for every lead the moment it is created, so anything short of 100% means sends are being skipped. Leads sold before the cadence opener was due are already excluded, so a fast walk-in close never counts against you. Raise a shortfall with us rather than with the floor.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_dealership"
+        ],
+        "measures": [
+          "lj_reachable_leads",
+          "lj_contacted",
+          "lj_never_contacted",
+          "lj_contact_coverage"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_never_contacted",
+          "dir": "desc"
+        },
+        "viz": "table"
+      }
+    },
+    {
+      "id": "settled_ratio_trend",
+      "name": "Lead-to-sold trend",
+      "question": "Is our close rate moving, month over month?",
+      "section": "money",
+      "headline": "worked_close_rate",
+      "so_what": "One month is noise. Three consecutive months in the same direction is the signal — and the two cards below tell you which input moved.",
+      "def": {
+        "source": "daily_stats",
+        "dimensions": [
+          "month"
+        ],
+        "measures": [
+          "worked_leads",
+          "worked_sold",
+          "worked_close_rate"
+        ],
+        "sort": {
+          "by": "month",
+          "dir": "asc"
+        },
+        "viz": "line"
+      }
+    },
+    {
+      "id": "untouched_leads",
+      "name": "Leads no rep picked up",
+      "question": "Which leads did the cadence carry on its own, with nobody stepping in?",
+      "section": "coaching",
+      "headline": "untouched_rate",
+      "so_what": "Not the same question as the coverage card — every one of these leads WAS contacted, by FLWUP. This is about whether a person ever got involved. It is never going to be zero and should not be: the point of the cadence is that a quiet lead keeps getting worked without anyone doing it by hand. Read it for the leads that replied and still got no human, which is where deals die.",
+      "def": {
+        "source": "daily_stats",
+        "dimensions": [
+          "dealership"
+        ],
+        "measures": [
+          "leads_created",
+          "untouched",
+          "untouched_rate",
+          "touch_rate"
+        ],
+        "sort": {
+          "by": "untouched",
+          "dir": "desc"
+        },
+        "viz": "bar"
+      }
+    },
+    {
+      "id": "speed_vs_close",
+      "name": "Speed to lead → close rate",
+      "question": "What does responding faster actually do to our close rate?",
+      "section": "training",
+      "so_what": "This is the chart to put in front of a rep who argues about response time. Published benchmark: contact inside 5 minutes converts at 25-32%, after an hour at 3-5%. Show them their own curve, not the industry one.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_response_band"
+        ],
+        "measures": [
+          "lj_worked_leads",
+          "lj_worked_sold",
+          "lj_worked_close_rate"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_response_band",
+          "dir": "asc"
+        },
+        "viz": "bar"
+      }
+    },
+    {
+      "id": "persistence",
+      "name": "Persistence → close rate",
+      "question": "How many attempts does it take us to convert, and do we make them?",
+      "section": "training",
+      "headline": "lj_median_attempts",
+      "so_what": "Conversion typically needs 6-8 contacts; the average dealership makes two, and 92% of salespeople quit after four. If the bars fall away on the right it is not that persistence stops working — it is that only the hard leads survive that long. Look at whether anyone is reaching 6 at all.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_attempt_band"
+        ],
+        "measures": [
+          "lj_worked_leads",
+          "lj_worked_sold",
+          "lj_worked_close_rate",
+          "lj_median_attempts"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_attempt_band",
+          "dir": "asc"
+        },
+        "viz": "bar"
+      }
+    },
+    {
+      "id": "response_gaps",
+      "name": "When we drop leads",
+      "question": "Which hours of the day do leads arrive and go unanswered?",
+      "section": "training",
+      "so_what": "A roster, not a telling-off. If the untouched leads cluster at opening, at lunch or after close, name someone to cover that block rather than asking the team to try harder.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_arrival_hour"
+        ],
+        "measures": [
+          "lj_leads",
+          "lj_untouched",
+          "lj_touch_rate",
+          "lj_median_minutes_to_touch"
+        ],
+        "sort": {
+          "by": "lj_arrival_hour",
+          "dir": "asc"
+        },
+        "viz": "bar"
+      }
+    },
+    {
+      "id": "conversation_to_appointment",
+      "name": "Conversations we did not book",
+      "question": "When a customer writes back, how often do we get them in?",
+      "section": "training",
+      "headline": "lj_reply_to_appointment",
+      "so_what": "The purest coaching number on the page — the rep had a live conversation and did not turn it into a visit. Nothing about lead quality explains this one away.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_owner"
+        ],
+        "measures": [
+          "lj_replied",
+          "lj_appointments_set",
+          "lj_reply_to_appointment",
+          "lj_appointment_show_rate"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_replied",
+          "dir": "desc"
+        },
+        "limit": 100,
+        "viz": "table"
+      }
+    },
+    {
+      "id": "rep_scorecard",
+      "name": "Rep scorecard",
+      "question": "Who responds fastest, who follows up, and who closes?",
+      "section": "coaching",
+      "so_what": "The document to sit down with. Each rep is measured against the industry benchmark, not against the rooftop average — a whole team can be behind and still look fine ranked against itself.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_owner"
+        ],
+        "measures": [
+          "lj_worked_leads",
+          "lj_median_minutes_to_touch",
+          "lj_touched_15m_rate",
+          "lj_touch_rate",
+          "lj_median_attempts",
+          "lj_worked_close_rate"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_worked_leads",
+          "dir": "desc"
+        },
+        "limit": 100,
+        "viz": "table"
+      }
+    },
+    {
+      "id": "network_scoreboard",
+      "name": "Rooftop scoreboard",
+      "question": "How is each rooftop performing on the things that predict a sale?",
+      "section": "coaching",
+      "def": {
+        "source": "daily_stats",
+        "dimensions": [
+          "dealership"
+        ],
+        "measures": [
+          "worked_leads",
+          "touched_15m_rate",
+          "median_minutes_to_touch",
+          "reply_rate",
+          "worked_close_rate"
+        ],
+        "sort": {
+          "by": "touched_15m_rate",
+          "dir": "desc"
+        },
+        "viz": "table"
+      }
+    },
+    {
+      "id": "speed_to_lead",
+      "name": "Speed-to-lead league",
+      "question": "Who is answering leads inside fifteen minutes, and who is not?",
+      "section": "coaching",
+      "headline": "touched_15m_rate",
+      "so_what": "Fifteen minutes is the competitive line. Dealers who beat it close around 50% more of the same leads.",
+      "def": {
+        "source": "daily_stats",
+        "dimensions": [
+          "dealership"
+        ],
+        "measures": [
+          "leads_created",
+          "touched_5m_rate",
+          "touched_15m_rate",
+          "median_minutes_to_touch"
+        ],
+        "sort": {
+          "by": "touched_15m_rate",
+          "dir": "desc"
+        },
+        "viz": "bar"
+      }
+    },
+    {
+      "id": "source_roi",
+      "name": "Lead source ROI",
+      "question": "Which lead sources actually convert, and how fast?",
+      "section": "demand",
+      "so_what": "Rows reading \"Unrecorded\" are leads where nobody filled in \"How did they reach us?\" on the lead form. Until that habit sticks this chart is a sample, not a census.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_lead_type"
+        ],
+        "measures": [
+          "lj_worked_leads",
+          "lj_reply_rate",
+          "lj_worked_close_rate",
+          "lj_median_days_to_sold"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_worked_leads",
+          "dir": "desc"
+        },
+        "viz": "table"
+      }
+    },
+    {
+      "id": "model_demand",
+      "name": "Model demand",
+      "question": "Which models are people enquiring about, and which of those close?",
+      "section": "demand",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_make_group",
+          "lj_model_group"
+        ],
+        "measures": [
+          "lj_worked_leads",
+          "lj_worked_sold",
+          "lj_worked_close_rate"
+        ],
+        "filters": [
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_worked_leads",
+          "dir": "desc"
+        },
+        "limit": 50,
+        "viz": "table"
+      }
+    },
+    {
+      "id": "sold_model_mix",
+      "name": "What we actually sell",
+      "question": "Which cars leave the yard — and how often is it not the one they came in for?",
+      "section": "demand",
+      "so_what": "Read this against Model demand above. A model that draws enquiries but rarely appears here is doing its job as a hook, not as stock. Rows under \"Not recorded\" are sales closed before the rep was asked what the customer drove away in; that number should fall to zero over the next few weeks on its own.",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_sold_model_group",
+          "lj_model_switched"
+        ],
+        "measures": [
+          "lj_worked_sold"
+        ],
+        "filters": [
+          {
+            "id": "lj_status_in",
+            "values": [
+              "sold"
+            ]
+          },
+          {
+            "id": "lj_worked_only"
+          }
+        ],
+        "sort": {
+          "by": "lj_worked_sold",
+          "dir": "desc"
+        },
+        "limit": 50,
+        "viz": "table"
+      }
+    },
+    {
+      "id": "lost_reasons",
+      "name": "Why we lose",
+      "question": "What reasons do reps give for the leads we lose?",
+      "section": "demand",
+      "def": {
+        "source": "lead_journey",
+        "dimensions": [
+          "lj_lost_reason"
+        ],
+        "measures": [
+          "lj_leads"
+        ],
+        "filters": [
+          {
+            "id": "lj_status_in",
+            "values": [
+              "lost"
+            ]
+          }
+        ],
+        "sort": {
+          "by": "lj_leads",
+          "dir": "desc"
+        },
+        "viz": "bar"
+      }
+    }
+  ]
+}
