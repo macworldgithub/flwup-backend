@@ -4,8 +4,12 @@ const path = require('path');
 // Paths relative to this script (backend/scripts/build-data.js)
 const backendDir = path.resolve(__dirname, '..');          // backend/
 const projectRoot = path.resolve(backendDir, '..');        // project root
-const frontendDir = path.resolve(projectRoot, 'frontend'); // frontend/
-const dataDir = path.resolve(backendDir, 'data');          // backend/data/
+const frontendDir = fs.existsSync(path.resolve(projectRoot, 'flwup-frontend'))
+  ? path.resolve(projectRoot, 'flwup-frontend')
+  : path.resolve(projectRoot, 'frontend');
+const dataDir = fs.existsSync(path.join(backendDir, 'network_leads'))
+  ? backendDir
+  : path.resolve(backendDir, 'data');
 const outDir = path.resolve(frontendDir, 'src', 'data');   // frontend/src/data/
 
 function loadAllData() {
@@ -34,8 +38,10 @@ function loadAllData() {
   const allLeads = [];
 
   leadFiles.forEach(file => {
-    const raw = JSON.parse(fs.readFileSync(path.join(leadsDir, file), 'utf8'));
-    const leadsList = raw.leads?.data || (Array.isArray(raw.leads) ? raw.leads : []);
+    try {
+      const raw = JSON.parse(fs.readFileSync(path.join(leadsDir, file), 'utf8'));
+      if (!raw || !raw.name) return;
+      const leadsList = raw.leads?.data || (Array.isArray(raw.leads) ? raw.leads : []);
 
     dealershipsMap[raw.dealership_id] = {
       id: raw.dealership_id,
@@ -102,6 +108,9 @@ function loadAllData() {
     });
 
     console.log(`✅ ${raw.name}: ${leadsList.length} leads (${file})`);
+    } catch (err) {
+      // ignore unparseable or error dump files
+    }
   });
 
   // 3. Reports

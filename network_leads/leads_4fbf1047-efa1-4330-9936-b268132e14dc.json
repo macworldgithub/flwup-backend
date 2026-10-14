@@ -1,9 +1,0 @@
-{
-  "dealership_id": "4fbf1047-efa1-4330-9936-b268132e14dc",
-  "name": "",
-  "range": {
-    "from": "2026-07-11",
-    "to": "2026-10-08"
-  },
-  "error": "HTTP 401 (token expired? copy a fresh one into .env) for /api/group/a2ca4dd5-9b90-4d14-80a4-92c7a94365f4/leads"
-}
