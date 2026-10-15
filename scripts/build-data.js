@@ -1,5 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const dotenv = require('dotenv');
+
+// Load .env so the DB sync (runMigration) can connect to MongoDB
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+
+const runMigration = require('../src/scripts/migrate');
 
 // Paths relative to this script (backend/scripts/build-data.js)
 const backendDir = path.resolve(__dirname, '..');          // backend/
@@ -12,7 +18,7 @@ const dataDir = fs.existsSync(path.join(backendDir, 'network_leads'))
   : path.resolve(backendDir, 'data');
 const outDir = path.resolve(frontendDir, 'src', 'data');   // frontend/src/data/
 
-function loadAllData() {
+async function loadAllData() {
   console.log('📦 Boran Motors CRM — Data Compiler');
   console.log('────────────────────────────────────');
   console.log(`📂 Reading from: ${dataDir}`);
@@ -241,6 +247,16 @@ export default dataset;
   console.log(`✅ store.js      →  ${path.relative(projectRoot, path.join(outDir, 'store.js'))}`);
   console.log(`\n🚀 Total leads compiled: ${total.toLocaleString()} across ${distinctDealerships.length} dealerships`);
   console.log('────────────────────────────────────\n');
+
+  // ── Auto-sync to MongoDB ──
+  console.log('🔄 Syncing compiled data to MongoDB...');
+  try {
+    await runMigration();
+    console.log('✅ MongoDB sync complete — frontend will now read live data from the database.');
+  } catch (err) {
+    console.error('⚠️  MongoDB sync failed (data still saved to disk):', err.message);
+    console.error('   Check your MONGODB_URI in .env and that the server is reachable.');
+  }
 }
 
 loadAllData();

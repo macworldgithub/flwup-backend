@@ -28,6 +28,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { ensureValidToken } = require("./src/utils/flwupAuth");
 
 // ---- load .env ----
 (function loadEnv() {
@@ -148,6 +149,24 @@ async function request(method, urlPath, { query, body, headers }) {
     } catch (e) {
         throw new Error(`network error: ${describeNetworkError(e)}`);
     }
+
+    // Auto-renew token and retry on 401 Unauthorized
+    if (res.status === 401) {
+        console.log(`\n⚠️  Received HTTP 401 for ${urlPath}. Attempting automatic token renewal...`);
+        const renewal = await ensureValidToken({ force: true });
+        if (renewal.renewed && renewal.token) {
+            console.log(`🔄 Retrying ${method} ${urlPath} with renewed token...`);
+            const cleanToken = renewal.token.trim().replace(/^Bearer\s+/i, "");
+            headers.Authorization = `Bearer ${cleanToken}`;
+            init.headers = headers;
+            try {
+                res = await fetch(url, init);
+            } catch (retryErr) {
+                throw new Error(`network error on retry: ${describeNetworkError(retryErr)}`);
+            }
+        }
+    }
+
     const text = await res.text();
     let data = null;
     try { data = JSON.parse(text); } catch { /* not JSON */ }
@@ -307,6 +326,10 @@ async function fetchReports(opts, baseHeaders) {
 async function main() {
     const opts = parseArgs();
     fs.mkdirSync(opts.out, { recursive: true });
+
+    // Validate and auto-renew FLWUP auth token if expired or expiring soon
+    await ensureValidToken();
+
     const headers = buildHeaders();
 
     if (!(await checkConnection(headers))) process.exit(1);

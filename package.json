@@ -15,7 +15,11 @@
     "fetch:reports": "node index.js --only reports",
     "fetch:combined": "node index.js --combined",
     "build-data": "node scripts/build-data.js",
-    "fetch-and-build": "node index.js --only leads,dashboard,reports && node scripts/build-data.js"
+    "fetch-and-build": "node index.js --only leads,dashboard,reports && node scripts/build-data.js",
+    "sync": "node index.js --only leads,dashboard,reports && node scripts/build-data.js",
+    "migrate": "node src/scripts/migrate.js",
+    "auth:status": "node src/utils/flwupAuth.js --status",
+    "auth:renew": "node src/utils/flwupAuth.js --renew"
   },
   "engines": {
     "node": ">=18.0.0"
