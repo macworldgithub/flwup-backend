@@ -385,6 +385,15 @@ async function main() {
     }
 
     if (failed.length) console.error(`\nNot saved (failed): ${failed.join(", ")}`);
+
+    // Auto-sync fetched data into MongoDB so database stays updated
+    try {
+        console.log("\n📦 Auto-syncing fetched data into MongoDB...");
+        const runMigration = require("./src/scripts/migrate");
+        await runMigration();
+    } catch (dbErr) {
+        console.warn("⚠️ Database auto-sync skipped/failed:", dbErr.message);
+    }
 }
 
 main();
